@@ -1,6 +1,9 @@
 import {
     render
 } from './render';
+import {
+    errorMessage
+} from './helpers';
 export const editUsers = () => {
 
     const tbody = document.getElementById('table-body');
@@ -21,6 +24,8 @@ export const editUsers = () => {
                 childrenInput.checked = user.children;
 
                 form.dataset.method = id;
+            }).catch(() => {
+                errorMessage();
             });
         }
     });
@@ -40,7 +45,11 @@ export const editUsers = () => {
                     render(users);
                     form.reset();
                     form.removeAttribute('data-method');
+                }).catch(() => {
+                    errorMessage();
                 });
+            }).catch(() => {
+                errorMessage();
             });
         }
     });

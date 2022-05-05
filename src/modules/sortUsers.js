@@ -2,12 +2,15 @@ import {
     render
 }
 from './render';
+import {
+    errorMessage
+} from './helpers';
 export const sortUsers = () => {
     const headerSortIsChildren = document.getElementById('sort-is-children');
     const headerSortIsId = document.getElementById('sort-is-id');
     const headerSortIsName = document.getElementById('sort-is-name');
-    const headerSortIsEmail= document.getElementById('sort-is-email');
-    const headerSortIsPremissions= document.getElementById('sort-is-premissions');
+    const headerSortIsEmail = document.getElementById('sort-is-email');
+    const headerSortIsPremissions = document.getElementById('sort-is-premissions');
 
     let isSort = false;
     headerSortIsChildren.style.cursor = 'pointer';
@@ -33,6 +36,8 @@ export const sortUsers = () => {
             value: isSort ? 'ask' : 'desc'
         }).then(users => {
             render(users);
+        }).catch(() => {
+            errorMessage();
         });
         isSort = !isSort;
     });
@@ -43,6 +48,8 @@ export const sortUsers = () => {
             value: isSort ? 'ask' : 'desc'
         }).then(users => {
             render(users);
+        }).catch(() => {
+            errorMessage();
         });
         isSort = !isSort;
     });
@@ -53,6 +60,8 @@ export const sortUsers = () => {
             value: isSort ? 'ask' : 'desc'
         }).then(users => {
             render(users);
+        }).catch(() => {
+            errorMessage();
         });
         isSort = !isSort;
     });
@@ -63,8 +72,10 @@ export const sortUsers = () => {
             value: isSort ? 'ask' : 'desc'
         }).then(users => {
             render(users);
+        }).catch(() => {
+            errorMessage();
         });
         isSort = !isSort;
     });
-    
+
 };

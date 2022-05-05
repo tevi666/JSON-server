@@ -20,6 +20,13 @@
       "children": false,
       "permissions": true,
       "id": 2
+    },
+    {
+      "name": "Artur",
+      "email": "artur@gmail.com",
+      "children": true,
+      "permissions": false,
+      "id": 3
     }
   ]
 }

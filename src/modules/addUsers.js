@@ -1,6 +1,9 @@
 import {
     render
 } from './render';
+import {
+    errorMessage
+} from './helpers';
 export const addUsers = () => {
     const form = document.querySelector('form');
     const nameInput = form.querySelector('#form-name');
@@ -21,7 +24,11 @@ export const addUsers = () => {
                 userService.getUsers().then(users => {
                     render(users);
                     form.reset();
+                }).catch(() => {
+                    errorMessage();
                 });
+            }).catch(() => {
+                errorMessage();
             });
         }
 

@@ -1,6 +1,9 @@
 import {
     render
 } from './render';
+import {
+    errorMessage
+} from './helpers';
 export const removeUsers = () => {
     const tbody = document.getElementById('table-body');
 
@@ -13,7 +16,11 @@ export const removeUsers = () => {
             userService.removeUser(id).then(res => {
                 userService.getUsers(id).then(users => {
                     render(users);
+                }).catch(() => {
+                    errorMessage();
                 });
+            }).catch(() => {
+                errorMessage();
             });
         }
     });
