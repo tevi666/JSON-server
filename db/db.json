@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "Mark Peros",
+      "email": "markperos@gmail.com",
+      "children": true,
+      "permissions": false,
+      "id": 0
+    },
+    {
+      "name": "Din",
+      "email": "vincester@gmail.com",
+      "children": false,
+      "permissions": true,
+      "id": 1
+    },
+    {
+      "name": "Sem",
+      "email": "vincester@gmail.com",
+      "children": false,
+      "permissions": true,
+      "id": 2
+    }
+  ]
+}
